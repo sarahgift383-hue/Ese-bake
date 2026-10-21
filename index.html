@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ese Bakery - Cakes, pastries, small chops, desserts and catering in Nigeria.">
+<title>Ese Bakery | Cakes, Pastries & Catering</title>
+
+<style>
+:root {
+  --wine:#70243a;
+  --dark:#35151f;
+  --gold:#d9a441;
+  --cream:#fffaf6;
+  --pink:#fff0f1;
+  --text:#302329;
+  --muted:#76676c;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:90px}
+body {font-family:Arial,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+a {text-decoration:none;color:inherit}
+button,input,select,textarea {font:inherit}
+button {cursor:pointer}
+header {background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #0001}
+nav {max-width:1200px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo {font-family:Georgia,serif;font-size:27px;font-weight:bold;color:var(--wine)}
+.logo span {display:block;font:10px Arial;letter-spacing:3px;text-align:center}
+.links {display:flex;gap:17px;align-items:center;flex-wrap:wrap;font-size:14px;font-weight:bold}
+.links a:hover {color:var(--wine)}
+.btn {display:inline-block;border:0;background:var(--wine);color:white;padding:12px 20px;border-radius:25px;font-weight:bold}
+.btn:hover {background:var(--dark)}
+.gold {background:var(--gold);color:#281a15}
+section {padding:65px 20px}
+.wrap {max-width:1200px;margin:auto}
+.hero {display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px;max-width:1200px;margin:auto;padding:60px 20px}
+.hero h1 {font:clamp(40px,5vw,68px) Georgia,serif;line-height:1.1;color:var(--dark);margin:15px 0}
+.hero h1 em {color:var(--wine)}
+.hero p {color:var(--muted);margin-bottom:20px}
+.hero img {width:100%;height:430px;object-fit:cover;border-radius:45% 45% 15px 15px}
+.eyebrow {text-transform:uppercase;letter-spacing:2px;color:var(--wine);font-size:12px;font-weight:bold}
+.heading {text-align:center;margin-bottom:30px}
+.heading h2 {font:clamp(30px,4vw,43px) Georgia,serif;color:var(--wine);margin:8px 0}
+.heading p {color:var(--muted)}
+.categories,.products,.services,.gallery {display:grid;gap:18px}
+.categories {grid-template-columns:repeat(4,1fr)}
+.category {background:white;border-radius:13px;overflow:hidden;text-align:center;border:1px solid #eadbd8;cursor:pointer}
+.category img {width:100%;height:150px;object-fit:cover}
+.category h3 {padding:12px;color:var(--wine)}
+.pink {background:var(--pink)}
+.toolbar {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.toolbar input,.toolbar select {padding:11px;border:1px solid #ddcdd1;border-radius:22px;background:white}
+.filters {display:flex;gap:7px;flex-wrap:wrap}
+.filter {padding:9px 14px;border:1px solid #dfcbd0;border-radius:22px;background:white;color:var(--wine)}
+.filter.active {background:var(--wine);color:white}
+.products {grid-template-columns:repeat(4,1fr)}
+.product {background:white;border:1px solid #eadbd8;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.product img {width:100%;height:200px;object-fit:cover}
+.product-info {padding:15px;display:flex;flex-direction:column;flex:1}
+.product-info h3 {color:var(--wine);margin:5px 0}
+.product-info p {font-size:13px;color:var(--muted);margin-bottom:12px;flex:1}
+.price {color:var(--wine);font-weight:bold;margin-bottom:10px}
+.product-info button {align-self:flex-start}
+.services {grid-template-columns:repeat(3,1fr)}
+.service {padding:25px;background:white;border:1px solid #eadbd8;border-radius:14px}
+.service h3 {color:var(--wine);margin:10px 0}
+.service p {color:var(--muted);margin-bottom:15px}
+.about {display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about img {width:100%;height:350px;object-fit:cover;border-radius:15px}
+.about h2 {font:40px Georgia,serif;color:var(--wine);margin-bottom:15px}
+.about p {color:var(--muted);margin-bottom:12px}
+.gallery {grid-template-columns:repeat(3,1fr)}
+.gallery img {width:100%;height:220px;object-fit:cover;border-radius:12px}
+.faq {max-width:850px;margin:auto}
+details {padding:16px 5px;border-bottom:1px solid #eadbd8}
+summary {cursor:pointer;font-weight:bold;color:var(--wine)}
+details p {padding-top:10px;color:var(--muted)}
+.form-grid {display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form input,form select,form textarea {width:100%;padding:13px;border:1px solid #dfcbd0;border-radius:8px;background:white;margin-bottom:12px}
+form textarea {min-height:110px}
+form .full {grid-column:1/-1}
+.contact {background:var(--wine);color:white;text-align:center}
+.contact h2 {font:40px Georgia,serif;margin-bottom:12px}
+.contact p {margin-bottom:15px}
+footer {background:var(--dark);color:white;padding:35px 20px;text-align:center}
+footer p {color:#ead8de;margin:8px}
+.whatsapp {position:fixed;bottom:18px;right:15px;background:#168b50;color:white;padding:13px 18px;border-radius:30px;font-weight:bold;z-index:20;box-shadow:0 5px 15px #0003}
+.cartbox {background:white;padding:20px;border:1px solid #eadbd8;border-radius:12px;margin-top:25px}
+.cart-row {display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #eee}
+@media(max-width:850px) {
+  nav {align-items:flex-start;flex-direction:column}
+  .links {gap:12px}
+  .hero,.about {grid-template-columns:1fr}
+  .hero img {height:320px}
+  .products {grid-template-columns:repeat(2,1fr)}
+  .categories {grid-template-columns:repeat(2,1fr)}
+  .services {grid-template-columns:1fr}
+}
+@media(max-width:480px) {
+  .products {grid-template-columns:1fr}
+  .gallery {grid-template-columns:1fr 1fr}
+  .gallery img {height:150px}
+  .form-grid {grid-template-columns:1fr}
+  .form-grid .full {grid-column:auto}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <a class="logo" href="#home">Ese Bakery<span>CAKES & CATERING</span></a>
+  <div class="links">
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#categories">Categories</a>
+    <a href="#catering">Catering</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <button class="btn" onclick="document.getElementById('cart').scrollIntoView()">Cart (<span id="cartCount">0</span>)</button>
+  </div>
+</nav>
+</header>
+
+<main>
+<section id="home">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Welcome to Ese Bakery</div>
+      <h1>Sweet treats.<br><em>Beautiful moments.</em></h1>
+      <p>Discover delicious cakes, fresh pastries, small chops, desserts and catering for birthdays, weddings and special occasions. Every celebration deserves something sweet!</p>
+      <a class="btn" href="#shop">Explore Our Menu</a>
+      <a class="btn gold" href="#order">Place an Order</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85" alt="Beautiful celebration cake">
+  </div>
+</section>
+
+<section id="categories" class="pink">
+<div class="wrap">
+  <div class="heading">
+    <div class="eyebrow">Explore our menu</div>
+    <h2>Something for Every Craving</h2>
+    <p>Choose a category to explore our delicious treats.</p>
+  </div>
+  <div class="categories">
+    <div class="category" onclick="chooseCategory('Cakes')">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Cakes">
+      <h3>Cakes</h3>
+    </div>
+    <div class="category" onclick="chooseCategory('Small Chops')">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Small chops">
+      <h3>Small Chops</h3>
+    </div>
+    <div class="category" onclick="chooseCategory('Pastries')">
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Pastries">
+      <h3>Pastries</h3>
+    </div>
+    <div class="category" onclick="chooseCategory('Desserts')">
+      <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80" alt="Desserts">
+      <h3>Desserts</h3>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="shop">
+<div class="wrap">
+  <div class="heading">
+    <div class="eyebrow">Freshly made with care</div>
+    <h2>Shop Our Products</h2>
+    <p>Browse our menu and add your favourites to your cart.</p>
+  </div>
+
+  <div class="toolbar">
+    <div class="filters">
+      <button class="filter active" onclick="chooseCategory('All',this)">All</button>
+      <button class="filter" onclick="chooseCategory('Cakes',this)">Cakes</button>
+      <button class="filter" onclick="chooseCategory('Small Chops',this)">Small Chops</button>
+      <button class="filter" onclick="chooseCategory('Pastries',this)">Pastries</button>
+      <button class="filter" onclick="chooseCategory('Desserts',this)">Desserts</button>
+      <button class="filter" onclick="chooseCategory('Drinks',this)">Drinks</button>
+    </div>
+    <input id="search" type="search" placeholder="Search products..." oninput="renderProducts()">
+  </div>
+
+  <div class="products" id="products"></div>
+
+  <div class="cartbox" id="cart">
+    <h2>Your Shopping Cart</h2>
+    <div id="cartItems"><p>Your cart is empty.</p></div>
+    <h3 style="margin:15px 0">Total: <span id="total">₦0</span></h3>
+    <p style="font-size:13px;color:#76676c;margin-bottom:12px">Prices shown are examples. Please confirm the final price with Ese Bakery.</p>
+    <button class="btn" onclick="checkout()">Order Cart on WhatsApp</button>
+    <button class="btn gold" onclick="clearCart()">Clear Cart</button>
+  </div>
+</div>
+</section>
+
+<section id="catering" class="pink">
+<div class="wrap">
+  <div class="heading">
+    <div class="eyebrow">Celebrate with Ese Bakery</div>
+    <h2>Catering for Every Occasion</h2>
+    <p>Let us help make your event special with delicious treats and thoughtful service.</p>
+  </div>
+  <div class="services">
+    <div class="service">
+      <div style="font-size:32px">🎂</div>
+      <h3>Birthday Cakes</h3>
+      <p>Custom cakes for birthdays, anniversaries, graduations and other milestones.</p>
+      <button class="btn" onclick="setService('Birthday Cake')">Enquire Now</button>
+    </div>
+    <div class="service">
+      <div style="font-size:32px">🥟</div>
+      <h3>Small Chops</h3>
+      <p>Party snacks and tasty bites for meetings, celebrations and gatherings.</p>
+      <button class="btn" onclick="setService('Small Chops')">Enquire Now</button>
+    </div>
+    <div class="service">
+      <div style="font-size:32px">🍽️</div>
+      <h3>Event Catering</h3>
+      <p>Tell us about your event, guest count and budget so we can discuss your needs.</p>
+      <button class="btn" onclick="setService('Event Catering')">Enquire Now</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="order">
+<div class="wrap">
+  <div class="heading">
+    <div class="eyebrow">Made just for you</div>
+    <h2>Request a Custom Order</h2>
+    <p>Fill in your details and send your enquiry directly to our WhatsApp.</p>
+  </div>
+  <form id="orderForm" onsubmit="sendCustomOrder(event)">
+    <div class="form-grid">
+      <input name="name" placeholder="Your full name" required>
+      <input name="phone" placeholder="Your phone number">
+      <select name="service" id="service" required>
+        <option value="">Choose a service</option>
+        <option>Birthday Cake</option>
+        <option>Wedding Cake</option>
+        <option>Small Chops</option>
+        <option>Pastries</option>
+        <option>Desserts</option>
+        <option>Event Catering</option>
+        <option>Gift Box</option>
+      </select>
+      <input name="date" type="date" aria-label="Event or delivery date">
+      <input name="quantity" placeholder="Quantity or number of guests">
+      <input name="budget" placeholder="Estimated budget (₦)">
+      <textarea class="full" name="details" placeholder="Describe your order, design, flavours, location or other requests"></textarea>
+    </div>
+    <button class="btn" type="submit">Send Order Request on WhatsApp</button>
+  </form>
+</div>
+</section>
+
+<section id="gallery" class="pink">
+<div class="wrap">
+  <div class="heading">
+    <div class="eyebrow">A taste of what we do</div>
+    <h2>Our Gallery</h2>
+    <p>Explore a few inspirations for your next celebration.</p>
+  </div>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=700&q=80" alt="Celebration cake">
+    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80" alt="Fresh pastries">
+    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=80" alt="Cookies">
+    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80" alt="Dessert">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="Decorated cake">
+    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80" alt="Fresh bread">
+  </div>
+</div>
+</section>
+
+<section id="about">
+<div class="wrap about">
+  <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80" alt="Bakery preparation">
+  <div>
+    <div class="eyebrow">Our story</div>
+    <h2>Made with Care, Shared with Joy</h2>
+    <p>Ese Bakery is here to make everyday treats and special celebrations sweeter. From beautiful cakes to pastries and party snacks, we want every order to feel special.</p>
+    <p>Have a particular flavour, design or event in mind? Contact us to discuss your ideas, pricing and availability.</p>
+    <a class="btn" href="#order">Talk About Your Order</a>
+  </div>
+</div>
+</section>
+
+<section class="pink">
+<div class="wrap faq">
+  <div class="heading">
+    <div class="eyebrow">Need to know?</div>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <details>
+    <summary>How do I place an order?</summary>
+    <p>Add products to your cart or complete the custom order form. Both options send your request to WhatsApp.</p>
+  </details>
+  <details>
+    <summary>Can I request a custom cake?</summary>
+    <p>Yes. Describe your preferred design, size, flavour and date in the custom order form.</p>
+  </details>
+  <details>
+    <summary>Do you provide event catering?</summary>
+    <p>Send us your event date, guest count, budget and preferred menu to discuss availability and pricing.</p>
+  </details>
+  <details>
+    <summary>Are the prices on this website final?</summary>
+    <p>No. The displayed prices are examples. Confirm current prices, quantities and delivery charges with Ese Bakery before paying.</p>
+  </details>
+</div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Let's Make Something Delicious</h2>
+  <p>Contact Ese Bakery for product enquiries, custom cakes and catering.</p>
+  <p>WhatsApp: +234 814 888 6973</p>
+  <p>Email: sarahgift383@gmail.com</p>
+  <a class="btn gold" href="https://wa.me/2348148886973" target="_blank" rel="noopener">Chat With Us on WhatsApp</a>
+  <a class="btn" href="mailto:sarahgift383@gmail.com">Send Us an Email</a>
+</section>
+</main>
+
+<footer>
+  <div class="logo" style="color:white">Ese Bakery</div>
+  <p>Cakes • Pastries • Small Chops • Desserts • Catering</p>
+  <p>WhatsApp: +234 814 888 6973</p>
+  <p>© <span id="year"></span> Ese Bakery. All rights reserved.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/2348148886973" target="_blank" rel="noopener">WhatsApp Us</a>
+
+<script>
+const WHATSAPP = "2348148886973";
+
+const productsData = [
+ {id:1,name:"Classic Birthday Cake",category:"Cakes",price:25000,unit:"sample price",img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80",desc:"A beautiful cake for birthdays and celebrations."},
+ {id:2,name:"Chocolate Cake",category:"Cakes",price:30000,unit:"sample price",img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80",desc:"Chocolate-inspired cake for sweet moments."},
+ {id:3,name:"Wedding Cake",category:"Cakes",price:85000,unit:"sample starting price",img:"https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=700&q=80",desc:"Custom designs available. Price depends on size and details."},
+ {id:4,name:"Cupcakes Box",category:"Cakes",price:8000,unit:"sample box",img:"https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=700&q=80",desc:"Small treats for parties, gifts and everyday enjoyment."},
+ {id:5,name:"Meat Pie Pack",category:"Pastries",price:7500,unit:"sample pack",img:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80",desc:"Savoury pastries for sharing."},
+ {id:6,name:"Doughnuts",category:"Pastries",price:5000,unit:"sample box",img:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80",desc:"Sweet bakery treats for family and friends."},
+ {id:7,name:"Fresh Bread",category:"Pastries",price:2500,unit:"sample loaf",img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80",desc:"A bakery favourite for any time of day."},
+ {id:8,name:"Cookies Box",category:"Pastries",price:4500,unit:"sample box",img:"https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=80",desc:"Crunchy treats for snacking or gifting."},
+ {id:9,name:"Small Chops Party Pack",category:"Small Chops",price:12000,unit:"sample pack",img:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80",desc:"A party snack selection. Confirm quantities and pricing."},
+ {id:10,name:"Puff-Puff Pack",category:"Small Chops",price:6000,unit:"sample pack",img:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80",desc:"A popular treat for parties and gatherings."},
+ {id:11,name:"Brownie Box",category:"Desserts",price:6500,unit:"sample box",img:"https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=700&q=80",desc:"Rich chocolate-style dessert bites."},
+ {id:12,name:"Parfait Cup",category:"Desserts",price:3500,unit:"sample cup",img:"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80",desc:"A layered dessert treat. Ask about available flavours."},
+ {id:13,name:"Zobo Drink",category:"Drinks",price:2000,unit:"sample bottle",img:"https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=80",desc:"A refreshing drink option. Confirm bottle sizes."},
+ {id:14,name:"Chapman Party Jug",category:"Drinks",price:12000,unit:"sample jug",img:"https://images.unsplash.com/photo-1513558161293-cdae765edfd7?auto=format&fit=crop&w=700&q=80",desc:"A drink option for celebrations and events."}
+];
+
+let selectedCategory = "All";
+let cart = {};
+
+function money(amount) {
+  return "₦" + Number(amount).toLocaleString("en-NG");
+}
+
+function renderProducts() {
+  const search = document.getElementById("search").value.toLowerCase().trim();
+  const list = productsData.filter(p =>
+    (selectedCategory === "All" || p.category === selectedCategory) &&
+    (p.name + " " + p.category + " " + p.desc).toLowerCase().includes(search)
+  );
+
+  const area = document.getElementById("products");
+
+  if (!list.length) {
+    area.innerHTML = "<p>No products found. Try another search.</p>";
+    return;
+  }
+
+  area.innerHTML = list.map(p => `
+    <article class="product">
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      <div class="product-info">
+        <small>${p.category}</small>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="price">${money(p.price)} <small>(${p.unit})</small></div>
+        <button class="btn" onclick="addToCart(${p.id})">Add to Cart</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function chooseCategory(category, button) {
+  selectedCategory = category;
+
+  docume
